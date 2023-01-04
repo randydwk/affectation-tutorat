@@ -1,0 +1,30 @@
+[
+  {
+    "tuteurAffecte": {
+      "ressourceEnseigne": "MATHS",
+      "annee": 3,
+      "moyenne": 12.0,
+      "motivation": "MOYEN",
+      "nbrAbsences": 4,
+      "ID": "NOUTUT1",
+      "nom": "Baguelle",
+      "prenom": "Caroline"
+    },
+    "tutoreAffecte": {
+      "notesRessources": {
+        "DEV": 3.9564143471128563,
+        "MATHS": 8.34018279879948,
+        "ARCHI": 4.659750519631877,
+        "WEB": 8.6286188584399
+      },
+      "annee": 1,
+      "moyenne": 11.3,
+      "motivation": "FAIBLE",
+      "nbrAbsences": 4,
+      "ID": "SSIALE6",
+      "nom": "Ssise",
+      "prenom": "alexis"
+    },
+    "ID": "C2"
+  }
+]

@@ -1,0 +1,13 @@
+logiciel
+    - tuteurs: ArrayList<Etudiant>
+    - tutores: ArrayList<Etudiant>
+
+etudiant
+- prenom: String
+- nom: String
+- annee: int
+- moyenne: double
+- absences: int
+
+    > tuteurs
+    - ressource

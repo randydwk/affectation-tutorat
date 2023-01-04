@@ -1,0 +1,45 @@
+ETUDIANTS FRAGILES
+
+-> les étudiants de première année doivent s'inscrire dans les ressources pour lesquelles ils souhaitent bénéficier d'un tutorat
+
+-> chaque inscription doit être validée par un enseignant de la ressource et pas un autre, une inscription peut être refusée si le niveau de l'étudiant est suffisamment correct
+
+-> le nombre de places de tutorat par ressource est limité
+
+ETUDIANTS TUTEURS
+
+-> les étudiants de deuxième et troisième année candidatent pour dispenser le tutorat dans une seule ressource
+
+-> chaque candidature peut être acceptée ou rejetée par un enseignant de la matière selon le niveau du tuteur-candidat dans celle-ci
+
+-> si le nombre de tuteurs est trop faible, on peut autoriser les tuteurs de 3ème année à encadrer plusieurs étudiants de première année
+
+UTILISATION
+
+-> les données seront fournies dans un fichier qu'il faudra parcourir et récupérer
+
+-> les enseignants doivent pouvoir filtrer les étudiants pour ne pas avoir à les trier à la main (exemples: filtrage sur la moyenne inférieure/supérieure à une valeur choisie par l'enseignant, filtrage sur le nombre d'absences)
+
+-> les filtres peuvent s'appliquer sur les étudiants et sur les tuteurs
+
+AFFECTATION
+
+-> l'affectation est réalisée automatiquement, elle est soumise à différentes contraintes
+    - les étudiants de troisième année ont la priorité pour suivre les tutorés
+    - les étudiants bénéficiant des meilleures moyennes sont privilégiés pour être tuteurs
+    - les étudiants de première année avec les résultats les plus faibles sont priviligiés
+    - les critères de motivation peuvent être pris en compte
+
+-> on souhaite aussi avoir la possibilité d'affecter manuellement un étudiant à un tuteur spécifique
+
+-> aléas : la plateforme doit gérer les inscriptions tardives (étudiant comme tuteur), le désistement. on doit alors relancer l'algorithme d'affectation sans modifier les affectations déjà réalisées
+
+TRAVAIL A REALISER
+
+-> proposer une modélisation du problème sous forme d’un diagramme de classes UML
+
+-> implémenter sous forme de boîte à outils l’algorithme d’affectation
+
+-> développer une première version fonctionnelle du programme, permettant de tester et valider l’utilisation de la boîte à outils
+
+-> réaliser une interface graphique qui permette de gérer les différentes opérations

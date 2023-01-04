@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxHeight="800.0" maxWidth="1500.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application_ihm.MonController">
+   <children>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <HBox alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="25.0" prefWidth="300.0">
+               <children>
+                  <Label text="Ressource">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="12.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="filter_matiere" prefHeight="24.0" prefWidth="114.0">
+                     <HBox.margin>
+                        <Insets left="12.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" top="16.0" />
+               </VBox.margin>
+            </Separator>
+            <VBox fx:id="vbox_tuteur" alignment="CENTER" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" style="-fx-background-color: #E0E0E0; -fx-background-radius: 24; -fx-border-color: #2cb1ff; -fx-border-radius: 21; -fx-border-width: 0; -fx-border-insets: 6;">
+               <children>
+                  <HBox prefHeight="0.0" prefWidth="301.0">
+                     <children>
+                        <Button fx:id="button_remove_tuteur" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #cc0000; -fx-background-radius: 15;" text="X" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="320.0" text="Tuteur" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri Light" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets bottom="6.0" left="32.0" right="32.0" top="6.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@blank_profile.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                           <children>
+                              <TextField fx:id="info_tuteur_prenom" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Prénom" style="-fx-background-radius: 6;">
+                                 <font>
+                                    <Font name="Calibri Light" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" top="6.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="info_tuteur_nom" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Nom" style="-fx-background-radius: 6;">
+                                 <font>
+                                    <Font name="Calibri Light" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" top="6.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                                 <children>
+                                    <Label prefWidth="60.0" text="Année">
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" prefHeight="0.0" prefWidth="84.0">
+                                       <children>
+                                          <RadioButton fx:id="info_tuteur_annee_2" disable="true" mnemonicParsing="false" text="2">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="info_tuteur_annee_group" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="info_tuteur_annee_3" disable="true" mnemonicParsing="false" text="3" toggleGroup="$info_tuteur_annee_group">
+                                             <HBox.margin>
+                                                <Insets left="12.0" />
+                                             </HBox.margin>
+                                          </RadioButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="6.0" top="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <ChoiceBox fx:id="info_tuteur_matiere" disable="true" maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="295.0" />
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                           <children>
+                              <Label alignment="CENTER" cache="true" contentDisplay="CENTER" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Motivation" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Slider fx:id="info_tuteur_motiv" blockIncrement="1.0" disable="true" majorTickUnit="1.0" max="3.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="120.0" showTickMarks="true" snapToTicks="true" styleClass="java" value="2.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" />
+                                 </padding>
+                              </Slider>
+                              <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="60.0" text="FAIBLE">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="3.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="60.0" text="ELEVEE" textAlignment="RIGHT">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="12.0" left="6.0" top="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="80.0" text="Moyenne">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" left="6.0" right="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="info_tuteur_moy" disable="true" minWidth="-Infinity" prefWidth="80.0" promptText="00.0" style="-fx-background-radius: 6;">
+                                       <font>
+                                          <Font name="Calibri Light" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="10.0">
+                                 <children>
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="80.0" text="Absences">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Spinner fx:id="info_tuteur_abs" disable="true" editable="true" prefWidth="80.0" style="-fx-background-radius: 6;">
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" top="6.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="12.0" left="20.0" right="20.0" top="12.0" />
+               </padding>
+            </VBox>
+            <Button fx:id="button_lier" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #147bb8; -fx-background-radius: 12; -fx-border-color: #147bb8; -fx-border-radius: 12; -fx-border-width: 3;" text="Lier" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </padding>
+            </Button>
+            <VBox fx:id="vbox_tutore" alignment="CENTER" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" style="-fx-background-color: #E0E0E0; -fx-background-radius: 24; -fx-border-color: #2cb1ff; -fx-border-radius: 21; -fx-border-width: 0; -fx-border-insets: 6;">
+               <children>
+                  <HBox prefHeight="0.0" prefWidth="301.0">
+                     <children>
+                        <Button fx:id="button_remove_tutore" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #cc0000; -fx-background-radius: 15;" text="X" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="332.0" text="Tutoré" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri Light" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets bottom="6.0" left="32.0" right="32.0" top="6.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@blank_profile.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                           <children>
+                              <TextField fx:id="info_tutore_prenom" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Prénom" style="-fx-background-radius: 6;">
+                                 <font>
+                                    <Font name="Calibri Light" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" top="6.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="info_tutore_nom" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" promptText="Nom" style="-fx-background-radius: 6;">
+                                 <font>
+                                    <Font name="Calibri Light" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" top="6.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="12.0" top="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="12.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="7.0" prefWidth="300.0">
+                     <children>
+                        <Label fx:id="label_tutore_res" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="20.0" text="Moyenne en MATHS">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="6.0" right="6.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="info_tutore_moy_res" disable="true" minWidth="-Infinity" prefWidth="80.0" promptText="00.0" style="-fx-background-radius: 6;">
+                           <font>
+                              <Font name="Calibri Light" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                           <children>
+                              <Label alignment="CENTER" cache="true" contentDisplay="CENTER" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Motivation" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Slider fx:id="info_tutore_motiv" blockIncrement="1.0" disable="true" majorTickUnit="1.0" max="3.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="120.0" showTickMarks="true" snapToTicks="true" styleClass="java" value="2.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" />
+                                 </padding>
+                              </Slider>
+                              <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="60.0" text="FAIBLE">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="3.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="40.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="60.0" text="ELEVEE" textAlignment="RIGHT">
+                                       <font>
+                                          <Font size="6.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="12.0" left="6.0" top="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="80.0" text="Moyenne">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" left="6.0" right="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="info_tutore_moy" disable="true" minWidth="-Infinity" prefWidth="80.0" promptText="00.0" style="-fx-background-radius: 6;">
+                                       <font>
+                                          <Font name="Calibri Light" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="10.0">
+                                 <children>
+                                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="80.0" text="Absences">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Spinner fx:id="info_tutore_abs" disable="true" editable="true" prefWidth="80.0" style="-fx-background-radius: 6;">
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" top="6.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="6.0" left="12.0" right="12.0" top="6.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="12.0" left="20.0" right="20.0" top="12.0" />
+               </padding>
+            </VBox>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <Label text="Tuteurs">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </Label>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" style="-fx-background-color: #E0E0E0; -fx-background-radius: 12;">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="100.0" text="Moyenne Min">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="filter_moy_min_tuteur" editable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="24.0" prefWidth="100.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="100.0" text="Moyenne Max">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="filter_moy_max_tuteur" editable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="24.0" prefWidth="100.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="6.0" top="6.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="177.0">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="100.0" text="Absences Max">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="filter_abs_tuteur" editable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="100.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="1.0" prefWidth="248.0" />
+                  <TilePane maxWidth="200.0" prefHeight="36.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Année Tuteur">
+                           <TilePane.margin>
+                              <Insets left="3.0" />
+                           </TilePane.margin>
+                        </Label>
+                        <RadioButton fx:id="filter_annee_2" mnemonicParsing="false" text="2ème">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="filter_annee_group" />
+                           </toggleGroup>
+                           <TilePane.margin>
+                              <Insets bottom="3.0" left="6.0" top="3.0" />
+                           </TilePane.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="filter_annee_tous" mnemonicParsing="false" selected="true" text="Tous" toggleGroup="$filter_annee_group" />
+                        <RadioButton fx:id="filter_annee_3" mnemonicParsing="false" text="3ème" toggleGroup="$filter_annee_group">
+                           <TilePane.margin>
+                              <Insets left="6.0" />
+                           </TilePane.margin>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </TilePane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </padding>
+            </VBox>
+            <ListView fx:id="liste_tuteur" fixedCellSize="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" style="-fx-background-radius: 12; -fx-background-color: #E0E0E0;">
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+            </ListView>
+            <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="312.0">
+               <children>
+                  <Button fx:id="button_new_tuteur" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="300.0" style="-fx-background-color: #2cb1ff; -fx-background-radius: 12;" text="+ Tuteur" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="6.0" right="6.0" top="6.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <Label text="Tutorés">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </Label>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" style="-fx-background-color: #E0E0E0; -fx-background-radius: 12;">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="100.0" text="Moyenne Min">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="filter_moy_min_tutore" editable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="100.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="100.0" text="Moyenne Max">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="filter_moy_max_tutore" editable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="100.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="6.0" top="6.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="276.0">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="100.0" text="Absences Max">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="filter_abs_tutore" editable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="100.0" style="-fx-background-radius: 6;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Spinner>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="24.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+            </VBox>
+            <ListView fx:id="liste_tutore" fixedCellSize="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" style="-fx-background-radius: 12; -fx-background-color: #E0E0E0;">
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+            </ListView>
+            <HBox alignment="TOP_CENTER" prefHeight="14.0" prefWidth="312.0">
+               <children>
+                  <Button fx:id="button_new_tutore" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="300.0" style="-fx-background-color: #2cb1ff; -fx-background-radius: 12;" text="+ Tutoré" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="6.0" right="6.0" top="6.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefWidth="300.0">
+         <children>
+            <Label text="Affectation">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="132.0" prefWidth="111.0" style="-fx-background-color: #E0E0E0; -fx-background-radius: 12;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Critères d'affectation">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <CheckBox fx:id="critere_annee" mnemonicParsing="false" prefWidth="120.0" text="Année">
+                     <VBox.margin>
+                        <Insets bottom="6.0" left="10.0" top="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="critere_motivation" mnemonicParsing="false" prefWidth="120.0" text="Motivation">
+                     <VBox.margin>
+                        <Insets bottom="6.0" left="10.0" top="6.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="critere_absences" mnemonicParsing="false" prefWidth="120.0" text="Absences">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="10.0" top="6.0" />
+                     </VBox.margin>
+                  </CheckBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+            </VBox>
+            <Button fx:id="button_affecter" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" graphicTextGap="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" style="-fx-background-color: #147bb8; -fx-background-radius: 12;" text="Affecter" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="6.0" top="6.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+            </Button>
+            <ListView fx:id="liste_couples" disable="true" fixedCellSize="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" style="-fx-background-radius: 12; -fx-background-color: #E0E0E0;">
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+            </ListView>
+            <Button fx:id="button_aff_export" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="36.0" style="-fx-background-color: #133547; -fx-background-radius: 12;" text="Exporter Affectation (.json)" textAlignment="CENTER" textFill="#fffdfd">
+               <VBox.margin>
+                  <Insets left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets left="6.0" right="12.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>
